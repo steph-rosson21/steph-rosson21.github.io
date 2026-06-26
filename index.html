@@ -5,319 +5,114 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stephanie Rosson</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@300;400;500;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
 
     :root {
-      --ink:    #18243A;
-      --blue:   #4272A8;
-      --muted:  #7A8FA8;
-      --rule:   #D4DFF0;
-      --bg:     #F6F8FC;
-      --white:  #FFFFFF;
+      --navy:   #1B1C57;
+      --green:  #00C385;
+      --muted:  #6B6E8F;
+      --rule:   #E4E2DA;
+      --bg:     #F7F4EE;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Poppins', sans-serif;
       background: var(--bg);
-      color: var(--ink);
+      color: var(--navy);
       -webkit-font-smoothing: antialiased;
-    }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed;
-      inset: 0 0 auto 0;
-      z-index: 100;
-      height: 50px;
+      min-height: 100vh;
       display: flex;
       align-items: center;
-      justify-content: flex-end;
-      gap: 32px;
-      padding: 0 52px;
-      background: rgba(246,248,252,0.92);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--rule);
+      justify-content: center;
+      padding: 40px;
     }
 
-    .nav-link {
-      font-size: 10.5px;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.15s;
-    }
-
-    .nav-link:hover { color: var(--blue); }
-
-    /* ── HERO ── */
-    .hero {
-      padding-top: 50px;
-      background: var(--white);
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .hero-inner {
-      max-width: 880px;
-      margin: 0 auto;
-      padding: 80px 60px 72px;
-    }
-
-    /* Photo + Name on same line */
-    .identity {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      margin-bottom: 20px;
+    .card {
+      text-align: center;
+      max-width: 460px;
     }
 
     .avatar {
-      width: 76px;
-      height: 76px;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       object-fit: cover;
       object-position: center top;
-      flex-shrink: 0;
-      border: 2px solid var(--white);
-      box-shadow: 0 0 0 1.5px var(--rule), 0 4px 18px rgba(66,114,168,0.13);
+      margin: 0 auto 28px;
+      display: block;
+      box-shadow: 0 0 0 1.5px var(--rule), 0 10px 30px rgba(27,28,87,0.13);
     }
 
-    .hero-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(52px, 7.5vw, 86px);
-      font-weight: 300;
-      line-height: 0.95;
-      letter-spacing: -0.025em;
-      color: var(--ink);
+    .name {
+      font-size: clamp(34px, 6vw, 50px);
+      font-weight: 600;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--navy);
     }
 
-    /* Title — right below name, readable size */
-    .hero-title {
+    .title {
+      font-family: 'Space Mono', monospace;
       font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 0.07em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 40px;
-      padding-left: 100px; /* aligns with name, clearing the photo */
+      margin-top: 14px;
+      margin-bottom: 34px;
     }
 
-    /* Rule */
-    .rule {
-      border: none;
-      border-top: 1px solid var(--rule);
-      margin-bottom: 40px;
+    .links {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
     }
-
-    /* Bio */
-    .hero-bio {
-      font-size: 20px;
-      font-weight: 300;
-      line-height: 1.82;
-      color: #3A5070;
-      max-width: 620px;
-      margin-bottom: 36px;
-    }
-
-    /* Links */
-    .hero-links { display: flex; gap: 10px; flex-wrap: wrap; }
 
     .btn {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 10px 22px;
+      padding: 12px 24px;
       border-radius: 100px;
-      font-size: 12.5px;
+      font-size: 13px;
       font-weight: 500;
       font-family: inherit;
       text-decoration: none;
       transition: all 0.18s;
     }
-
     .btn-solid {
-      background: var(--blue);
+      background: var(--navy);
       color: #fff;
-      box-shadow: 0 2px 14px rgba(66,114,168,0.24);
     }
-
-    .btn-solid:hover { background: #355f94; transform: translateY(-1px); }
-
+    .btn-solid:hover { background: #0f1040; transform: translateY(-1px); }
     .btn-ghost {
       background: transparent;
-      color: var(--ink);
+      color: var(--navy);
       border: 1px solid var(--rule);
     }
-
-    .btn-ghost:hover { border-color: var(--blue); color: var(--blue); transform: translateY(-1px); }
-
-    /* ── WORK ── */
-    .work { padding: 80px 0; background: var(--bg); }
-
-    .work-inner {
-      max-width: 880px;
-      margin: 0 auto;
-      padding: 0 60px;
-    }
-
-    .section-eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 32px;
-    }
-
-    .eyebrow-text {
-      font-size: 9.5px;
-      font-weight: 600;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--muted);
-      white-space: nowrap;
-    }
-
-    .eyebrow-line { flex: 1; height: 1px; background: var(--rule); }
-
-    .work-card {
-      display: grid;
-      grid-template-columns: 1fr 56px;
-      gap: 32px;
-      align-items: center;
-      background: var(--white);
-      border-radius: 18px;
-      padding: 36px 40px;
-      border: 1px solid var(--rule);
-      text-decoration: none;
-      color: inherit;
-      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
-    }
-
-    .work-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 48px rgba(24,36,58,0.09);
-      border-color: #A8C4E0;
-    }
-
-    .work-tag {
-      display: inline-block;
-      font-size: 9.5px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--blue);
-      background: #EDF3FB;
-      padding: 3px 11px;
-      border-radius: 100px;
-      margin-bottom: 12px;
-    }
-
-    .work-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 26px;
-      font-weight: 400;
-      color: var(--ink);
-      margin-bottom: 10px;
-      letter-spacing: -0.01em;
-    }
-
-    .work-desc { font-size: 13px; color: var(--muted); line-height: 1.85; }
-
-    .work-arrow {
-      width: 44px; height: 44px;
-      border-radius: 50%;
-      background: var(--bg);
-      border: 1px solid var(--rule);
-      display: flex; align-items: center; justify-content: center;
-      color: var(--muted);
-      font-size: 18px;
-      flex-shrink: 0;
-      transition: all 0.2s;
-    }
-
-    .work-card:hover .work-arrow { background: var(--blue); border-color: var(--blue); color: #fff; }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--white);
-      border-top: 1px solid var(--rule);
-      padding: 24px 20px;
-      text-align: center;
-      font-size: 10.5px;
-      letter-spacing: 0.06em;
-      color: #B0BDD0;
-    }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 680px) {
-      .hero-inner, .work-inner { padding: 48px 28px; }
-      .hero-title { padding-left: 0; margin-top: 14px; }
-      .hero-name { font-size: 44px; }
-      .avatar { width: 58px; height: 58px; }
-      .work-card { grid-template-columns: 1fr; padding: 28px; }
-      .work-arrow { display: none; }
-      nav { padding: 0 24px; gap: 20px; }
-    }
+    .btn-ghost:hover { border-color: var(--green); color: var(--green); transform: translateY(-1px); }
   </style>
 </head>
 <body>
 
-  <nav>
-    <a class="nav-link" href="stories.html">Work</a>
-    <a class="nav-link" href="mailto:stephbautista@gmail.com">Email</a>
-    <a class="nav-link" href="https://www.linkedin.com/in/stephanie-rosson/" target="_blank">LinkedIn</a>
-  </nav>
+  <div class="card">
+    <img class="avatar" src="photo.jpeg" alt="Stephanie Rosson" />
+    <h1 class="name">Stephanie Rosson</h1>
+    <p class="title">Director of Program Operations</p>
 
-  <section class="hero">
-    <div class="hero-inner">
-
-      <div class="identity">
-        <img class="avatar" src="photo.jpeg" alt="Stephanie Rosson" />
-        <h1 class="hero-name">Stephanie Rosson</h1>
-      </div>
-
-      <p class="hero-title">Director of Program Operations &nbsp;·&nbsp; CodePath</p>
-
-      <hr class="rule" />
-
-      <p class="hero-bio">I build the systems and teams that help education programs scale. Currently leading program operations at CodePath, where we train the next generation of engineers from underrepresented backgrounds.</p>
-
-      <div class="hero-links">
-        <a class="btn btn-solid" href="https://www.linkedin.com/in/stephanie-rosson/" target="_blank">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          LinkedIn
-        </a>
-        <a class="btn btn-ghost" href="mailto:stephbautista@gmail.com">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          Get in touch
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="work">
-    <div class="work-inner">
-      <div class="section-eyebrow">
-        <span class="eyebrow-text">Featured Work</span>
-        <div class="eyebrow-line"></div>
-      </div>
-
-      <a class="work-card" href="stories.html">
-        <div>
-          <span class="work-tag">Summer 2026</span>
-          <div class="work-title">Student Stories — CodePath × Claude</div>
-          <p class="work-desc">Real stories from CodePath students on how Claude changed what they dared to build and how they learned. A showcase of 20+ testimonials from the AI Engineering program.</p>
-        </div>
-        <div class="work-arrow">→</div>
+    <div class="links">
+      <a class="btn btn-solid" href="https://www.linkedin.com/in/stephanie-rosson/" target="_blank">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+      <a class="btn btn-ghost" href="mailto:stephbautista@gmail.com">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Get in touch
       </a>
     </div>
-  </section>
-
-  <footer>Stephanie Rosson &nbsp;·&nbsp; stephrosson.com</footer>
+  </div>
 
 </body>
 </html>
